@@ -34,8 +34,8 @@
         /* Picture Frames */
         .picture-frame {
             position: fixed;
-            width: 140px;
-            height: 140px;
+            width: 180px;
+            height: 180px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -43,6 +43,10 @@
             opacity: 0;
             transition: opacity 0.5s ease;
             z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
         }
 
         .picture-frame img {
@@ -229,8 +233,9 @@
 
         @media (max-width: 768px) {
             .picture-frame {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
             }
             .pic-top-left { top: 10px; left: 10px; }
             .pic-top-right { top: 10px; right: 10px; }
@@ -309,7 +314,11 @@
             pics.forEach((pic, i) => pic.classList.remove('show'));
             setTimeout(() => {
                 picArray.forEach((src, i) => {
-                    pics[i].innerHTML = `<img src="${src}" alt="pic"/>`;
+                    if (src.includes('.jpeg') || src.includes('.jpg')) {
+                        pics[i].innerHTML = `<img src="${src}" alt="pic"/>`;
+                    } else {
+                        pics[i].textContent = src;
+                    }
                     pics[i].classList.add('show');
                 });
             }, 50);
