@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Anusha! <img src="00725771-AEAD-4449-828D-B52CBD1A4ECA_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></title>
+    <title>Happy Birthday Anusha! 🎉</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -63,6 +63,14 @@
             opacity: 0;
             transition: opacity 0.6s ease, transform 0.6s ease;
             transform-origin: center;
+            overflow: hidden;
+        }
+
+        .picture-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         .picture-frame.show {
@@ -392,10 +400,10 @@
 
     <!-- Picture Frames -->
     <div class="pictures-container">
-        <div class="picture-frame top-left" id="picTopLeft"><img src="0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></div>
-        <div class="picture-frame top-right" id="picTopRight"><img src="055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></div>
-        <div class="picture-frame bottom-left" id="picBottomLeft"><img src="05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></div>
-        <div class="picture-frame bottom-right" id="picBottomRight"><img src="05F593E5-6FDB-4BA6-8C07-000FCF28AC2F_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></div>
+        <div class="picture-frame top-left" id="picTopLeft"></div>
+        <div class="picture-frame top-right" id="picTopRight"></div>
+        <div class="picture-frame bottom-left" id="picBottomLeft"></div>
+        <div class="picture-frame bottom-right" id="picBottomRight"></div>
     </div>
 
     <!-- Main Container -->
@@ -405,12 +413,12 @@
                 <!-- Front: Hero -->
                 <div class="flip-card-front">
                     <div class="hero-content">
-                        <h1>Happy Birthday <span style="animation: bounce 2s ease-in-out infinite;"><img src="096AC416-909F-4FF3-8409-DF1AF642C337_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></span></h1>
+                        <h1>Happy Birthday <span style="animation: bounce 2s ease-in-out infinite;">🎉</span></h1>
                         <h2>Anusha</h2>
                         <p>Our amazing doctor & inspiration</p>
                         <div class="tap-hint">
                             Click the card to begin
-                            <span class="tap-indicator"><img src="0982B003-57AA-48D9-9CE6-97E2672ECD37_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></span>
+                            <span class="tap-indicator">👆</span>
                         </div>
                     </div>
                 </div>
@@ -418,7 +426,7 @@
                 <!-- Back: First Reason (will be replaced) -->
                 <div class="flip-card-back">
                     <div class="reason-content" id="reasonContent">
-                        <div class="reason-emoji"><img src="152C2FC0-DE3C-47D2-BAA5-8F4F43CEF66B_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/></div>
+                        <div class="reason-emoji">✨</div>
                         <div class="reason-number">01</div>
                         <div class="reason-text">You are the most wonderful, beautiful, thoughtful and fun human being</div>
                     </div>
@@ -428,37 +436,37 @@
     </div>
 
     <script>
-        // 25 Reasons with different decorations
+        // 25 Reasons with image paths
         const reasons = [
-            { text: "You are the most wonderful, beautiful, thoughtful and fun human being", emoji: "<img src="1A4DFA98-1EE9-4BF0-9A78-768612FCAA98_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""1A8B3D8F-35BC-40C7-9CC7-97E92749ACA4_1_105_c.jpeg"", ""1BCC4F53-AF27-4C58-8099-4C087CE99C79_1_105_c.jpeg"", ""24BC25F2-64E4-4033-8BC4-0A4D87525210_4_5005_c.jpeg"", ""27021148-1699-4096-AF87-4A12A8BD88B2_4_5005_c.jpeg""] },
-            { text: "You have a golden heart that shines through everything you do", emoji: "<img src="27C45E61-9643-4ADE-B6E1-0F5977A61597_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""2A836889-E952-4F7F-871C-B17C0312B41A_1_105_c.jpeg"", ""2CCF68D1-91E6-42B9-AE10-35C645ED0732_1_105_c.jpeg"", ""2ECF2899-F82E-4B8B-BB6A-25D98246CE97_4_5005_c.jpeg"", ""31F43B2F-4CB2-4B13-8FC9-2987FBCF9BD5_4_5005_c.jpeg""] },
-            { text: "You are intelligent and smart in ways that inspire us all", emoji: "<img src="32E4EA56-AF84-4B25-B3ED-E9381E0102FB_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""33B76539-CE1A-43D6-9072-614F1BCBF43F_4_5005_c.jpeg"", ""352C8C61-1432-4CA7-A7F2-A7F1F73E948C_4_5005_c.jpeg"", ""355F6FEA-CE3E-4755-B0ED-52A1A8DE6D12_4_5005_c.jpeg"", ""3B06EB91-B8E3-48B0-A9B4-349AF885A175_4_5005_c.jpeg""] },
-            { text: "Your magnetic smile and drop-dead good looks light up every room", emoji: "<img src="3FF12A5C-7E50-450E-8713-388CAD796C24_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""40C9F285-13A0-4F89-9FA4-BED3AE1FB201.jpeg"", ""432CD8F8-F431-4644-9044-375635138CB2_4_5005_c.jpeg"", ""43E7F1C0-AD7C-489E-9CED-ACCEB3C84C7C_1_105_c.jpeg"", ""46FC74C4-1519-4EAE-B876-9044274EBA3D_4_5005_c.jpeg""] },
-            { text: "You have a rocking personality that draws everyone in", emoji: "<img src="4B1AC9FA-1620-4BDA-B928-EEC83B76CE1A_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""52150B1A-7A42-4AF1-B1B3-7B1682FF21A9_1_105_c.jpeg"", ""522E7F63-850C-4F58-B588-4DE014043DDB_4_5005_c.jpeg"", ""5318129F-4A52-4516-8FE1-2D7768D9E289_1_105_c.jpeg"", ""55DDFD98-B613-4BED-92F5-BE822DC9BF93_4_5005_c.jpeg""] },
-            { text: "You are a brilliant doctor who truly cares about your patients", emoji: "<img src="5CFB47C3-2131-470A-96AA-E9C879688162_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>‍<img src="60B4555F-089F-4AC3-B4C0-0BC1E713FD12_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>️", pics: [""614134A6-73BD-40A7-9113-A5FDAF728593_4_5005_c.jpeg"", ""61508C7A-D485-4CFA-A16D-B30C07448461_4_5005_c.jpeg"", "🩺", ""6BEC6ED6-312B-485A-B118-7DCDF500B280_4_5005_c.jpeg"️"] },
-            { text: "You are an amazing daughter who makes mom so proud", emoji: "<img src="6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""71C006DC-C926-4461-9646-9786141E6DF1_4_5005_c.jpeg"", ""74276404-C06C-4946-A521-BA2810FFE780_4_5005_c.jpeg"", ""7721E552-B913-4F28-B82E-05ED1EA699D8_4_5005_c.jpeg"", ""7C479F1C-E6AB-409F-B3ED-0077A691B4C7_4_5005_c.jpeg"️"] },
-            { text: "You are an amazing sister and I'm lucky to have you as my sibling", emoji: "<img src="7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""7F2080E9-4117-4D79-9D95-C8D353CD4DC3_4_5005_c.jpeg"", ""7F2EE0FE-BAEF-4932-B1ED-B5E1AE81D855_4_5005_c.jpeg"", ""8329C031-9E04-45A0-99D3-F35809C3A517_4_5005_c.jpeg"‍"85F4D276-EA82-4CC2-ADD0-EA8D7D4C556F_4_5005_c.jpeg"‍"8676584E-CE2C-4889-A2E1-31C4115DA5DA_4_5005_c.jpeg"", ""8C861688-7D8A-49D7-B516-BE4E6D0D37F5_1_105_c.jpeg""] },
-            { text: "Your lovely doe-like eyes and you're the apple of mom's eye (and mine too!)", emoji: "<img src="91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>️", pics: [""936EB3C1-8518-471C-AAB4-E078235F5EA9_4_5005_c.jpeg"", ""964E56A3-1E7C-4E2E-B277-4861AD84F6C1_4_5005_c.jpeg"", ""993F673A-C681-4B60-946B-538FE7CCA9CA_4_5005_c.jpeg"", ""9E56E008-5B4C-447F-AE79-6328828EB6E8_4_5005_c.jpeg""] },
-            { text: "You are a dear and loyal friend who always shows up when it matters", emoji: "<img src="9FE0200E-8BFE-4569-A9A2-B9F28B9CB7C2_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""A45F8A64-2A16-4D3A-B11D-39E455E5CD35_4_5005_c.jpeg"", ""A684CC2F-BC47-42CE-84C0-B88C8D4D2F40_4_5005_c.jpeg"", ""A8A2B7D1-EDFD-47B8-9D91-C74741D75905_1_105_c.jpeg"", ""AA834122-3240-4185-9FC7-504716273F16_4_5005_c.jpeg"️"] },
-            { text: "You are a graceful dancer who moves with such elegance", emoji: "<img src="B32096E6-D82E-45B1-99B5-BC43E8F58996_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""B34D267B-3ABA-49BE-8D45-87CABE0971C5.jpeg"", ""B3977E84-D173-4E61-8388-2498CB5E367C_4_5005_c.jpeg"", ""B442B845-E1D1-4C8F-AFAB-6C6F2F4B4393_4_5005_c.jpeg"", ""B676B8D7-1EC4-4037-B758-2E2A13D77430_4_5005_c.jpeg""] },
-            { text: "Your golden heart touches everyone around you with kindness", emoji: "<img src="B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""B6DF0D3E-C488-475C-98DF-4F1D92274056_1_105_c.jpeg"", ""BAE154D2-97D0-4B47-B710-1BE3B1F9639D_4_5005_c.jpeg"", ""C057DA8E-BD36-4514-94EA-2797AA92ACD4_4_5005_c.jpeg"", ""C12C463D-8F4C-4717-B310-C69A18C5AF0A_4_5005_c.jpeg""] },
-            { text: "You have a melodious voice when you sing", emoji: "<img src="C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""C200F0C2-BCB6-47A4-9183-284CED6AE84B_4_5005_c.jpeg"", ""C31A05E6-06AC-4F48-950A-AB89DF5C8F3A_4_5005_c.jpeg"", ""C4EEA1C6-DEEC-41F7-A26E-CE1AE931DBF4_4_5005_c.jpeg"", ""C8C136A6-9FEC-4847-87BC-A6B149CCB689_4_5005_c.jpeg""] },
-            { text: "You are a connoisseur of dance and truly appreciate the art form", emoji: "🩰", pics: [""C9EBD2A5-F696-47C9-A854-E4284971D8A3_1_105_c.jpeg"", ""CBD29099-7B80-467C-B831-00D81C20A776_4_5005_c.jpeg"", ""D20A094B-964E-4543-8C63-1A9C14F30630_4_5005_c.jpeg"", ""D4ED7A7A-0CDF-4982-96C1-84BA71FD5D6D_4_5005_c.jpeg""] },
-            { text: "You are a spirited and brave young woman who faces challenges head-on", emoji: "<img src="D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""D853A0A0-3CEA-4000-9C57-A4335A80D9D7_4_5005_c.jpeg"️", ""DD87EE77-4C59-49E9-AB48-EFCEE0F345EA_4_5005_c.jpeg"", "⭐", ""DE0B0245-091B-4648-8101-6843D61C32FC_4_5005_c.jpeg""] },
-            { text: "You are a bright and beautiful companion to all who know you", emoji: "<img src="DE159079-4A56-41ED-A02B-B7B5F26C3803_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""DF9B54C9-C90F-4D6D-A400-3DC9F55B40DF_4_5005_c.jpeg"", ""E049B3C1-E49B-40EC-A033-B14647115198_1_105_c.jpeg"", ""E13EDE46-EFC9-4493-93BF-7A38AE6F68A1_1_105_c.jpeg"", ""E495D2D9-423C-45DA-AD8A-B8DB827C3AA4_4_5005_c.jpeg""] },
-            { text: "Your devotion to Radhe Krishna reflects your spiritual depth", emoji: "<img src="E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""EA131A7F-C1E3-47FB-B29F-F0066DDA6E9C_4_5005_c.jpeg"️", ""ECB04E1D-627D-4E7E-A79B-FD5402C6D458_4_5005_c.jpeg"", ""EF1217D4-889E-42CA-87F4-D7958E657171_4_5005_c.jpeg"", ""F1756EE7-6FEE-49CC-B8AF-A9FC3FEE32BB_4_5005_c.jpeg"️"] },
-            { text: "You're sometimes lovingly stubborn in the most endearing way", emoji: "<img src="F5E6B14C-1B12-4B4B-9F3B-E297A8F43DCA_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""F64A2F23-E7E2-4DA3-BC63-C5431BC3DBC5_1_105_c.jpeg"", ""F6A9630B-B281-46E8-BE31-78A04316BA7B_4_5005_c.jpeg"", ""F6EE1EB2-F183-4D8F-AFC1-043094E10B3C_4_5005_c.jpeg"", ""F84305B2-0334-487D-8FEF-46F003FE1F5D_4_5005_c.jpeg""] },
-            { text: "You are gorgeous, gorgeous, gorgeous inside and out", emoji: "<img src="FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg" alt="pic" style="width:100%; height:100%; object-fit:cover; border-radius:10px;"/>", pics: [""FCD0604E-97AF-4A73-980C-702CF104F81B_1_105_c.jpeg"", "💫", "💖", "🌟"] },
-            { text: "You are an empathetic doctor yet maintain your professionalism", emoji: "❤️", pics: ["👩‍⚕️", "💕", "🤝", "💉"] },
-            { text: "You love your sleep and we totally respect your need for rest", emoji: "😴", pics: ["🛏️", "💤", "🌙", "😴"] },
-            { text: "Your love for dosa, idli, and Chinese food shows your amazing taste", emoji: "🍜", pics: ["🥘", "🍲", "🍱", "😋"] },
-            { text: "You are beautiful inside and out in every way possible", emoji: "💖", pics: ["✨", "💫", "🌸", "👸"] },
-            { text: "You are charming and attractive in all respects", emoji: "✨", pics: ["💅", "👑", "💕", "🌟"] },
-            { text: "You are understanding and helpful to everyone around you, and you are a blessing to mom and me", emoji: "🙌", pics: ["💕", "🤗", "👨‍👩‍👧", "❤️"] }
+            { text: "You are the most wonderful, beautiful, thoughtful and fun human being", emoji: "✨", pics: ["1A8B3D8F-35BC-40C7-9CC7-97E92749ACA4_1_105_c.jpeg", "1BCC4F53-AF27-4C58-8099-4C087CE99C79_1_105_c.jpeg", "24BC25F2-64E4-4033-8BC4-0A4D87525210_4_5005_c.jpeg", "27021148-1699-4096-AF87-4A12A8BD88B2_4_5005_c.jpeg"] },
+            { text: "You have a golden heart that shines through everything you do", emoji: "💛", pics: ["2A836889-E952-4F7F-871C-B17C0312B41A_1_105_c.jpeg", "2CCF68D1-91E6-42B9-AE10-35C645ED0732_1_105_c.jpeg", "2ECF2899-F82E-4B8B-BB6A-25D98246CE97_4_5005_c.jpeg", "31F43B2F-4CB2-4B13-8FC9-2987FBCF9BD5_4_5005_c.jpeg"] },
+            { text: "You are intelligent and smart in ways that inspire us all", emoji: "🧠", pics: ["33B76539-CE1A-43D6-9072-614F1BCBF43F_4_5005_c.jpeg", "352C8C61-1432-4CA7-A7F2-A7F1F73E948C_4_5005_c.jpeg", "355F6FEA-CE3E-4755-B0ED-52A1A8DE6D12_4_5005_c.jpeg", "3B06EB91-B8E3-48B0-A9B4-349AF885A175_4_5005_c.jpeg"] },
+            { text: "Your magnetic smile and drop-dead good looks light up every room", emoji: "😊", pics: ["40C9F285-13A0-4F89-9FA4-BED3AE1FB201.jpeg", "432CD8F8-F431-4644-9044-375635138CB2_4_5005_c.jpeg", "43E7F1C0-AD7C-489E-9CED-ACCEB3C84C7C_1_105_c.jpeg", "46FC74C4-1519-4EAE-B876-9044274EBA3D_4_5005_c.jpeg"] },
+            { text: "You have a rocking personality that draws everyone in", emoji: "🎸", pics: ["52150B1A-7A42-4AF1-B1B3-7B1682FF21A9_1_105_c.jpeg", "522E7F63-850C-4F58-B588-4DE014043DDB_4_5005_c.jpeg", "5318129F-4A52-4516-8FE1-2D7768D9E289_1_105_c.jpeg", "55DDFD98-B613-4BED-92F5-BE822DC9BF93_4_5005_c.jpeg"] },
+            { text: "You are a brilliant doctor who truly cares about your patients", emoji: "👩‍⚕️", pics: ["614134A6-73BD-40A7-9113-A5FDAF728593_4_5005_c.jpeg", "61508C7A-D485-4CFA-A16D-B30C07448461_4_5005_c.jpeg", "6BEC6ED6-312B-485A-B118-7DCDF500B280_4_5005_c.jpeg", "6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg"] },
+            { text: "You are an amazing daughter who makes mom so proud", emoji: "👧", pics: ["71C006DC-C926-4461-9646-9786141E6DF1_4_5005_c.jpeg", "74276404-C06C-4946-A521-BA2810FFE780_4_5005_c.jpeg", "7721E552-B913-4F28-B82E-05ED1EA699D8_4_5005_c.jpeg", "7C479F1C-E6AB-409F-B3ED-0077A691B4C7_4_5005_c.jpeg"] },
+            { text: "You are an amazing sister and I'm lucky to have you as my sibling", emoji: "👭", pics: ["7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "7F2080E9-4117-4D79-9D95-C8D353CD4DC3_4_5005_c.jpeg", "7F2EE0FE-BAEF-4932-B1ED-B5E1AE81D855_4_5005_c.jpeg", "8329C031-9E04-45A0-99D3-F35809C3A517_4_5005_c.jpeg"] },
+            { text: "Your lovely doe-like eyes and you're the apple of mom's eye (and mine too!)", emoji: "👁️", pics: ["91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "936EB3C1-8518-471C-AAB4-E078235F5EA9_4_5005_c.jpeg", "964E56A3-1E7C-4E2E-B277-4861AD84F6C1_4_5005_c.jpeg", "993F673A-C681-4B60-946B-538FE7CCA9CA_4_5005_c.jpeg"] },
+            { text: "You are a dear and loyal friend who always shows up when it matters", emoji: "🤝", pics: ["9FE0200E-8BFE-4569-A9A2-B9F28B9CB7C2_4_5005_c.jpeg", "A45F8A64-2A16-4D3A-B11D-39E455E5CD35_4_5005_c.jpeg", "A684CC2F-BC47-42CE-84C0-B88C8D4D2F40_4_5005_c.jpeg", "A8A2B7D1-EDFD-47B8-9D91-C74741D75905_1_105_c.jpeg"] },
+            { text: "You are a graceful dancer who moves with such elegance", emoji: "💃", pics: ["B32096E6-D82E-45B1-99B5-BC43E8F58996_4_5005_c.jpeg", "B34D267B-3ABA-49BE-8D45-87CABE0971C5.jpeg", "B3977E84-D173-4E61-8388-2498CB5E367C_4_5005_c.jpeg", "B442B845-E1D1-4C8F-AFAB-6C6F2F4B4393_4_5005_c.jpeg"] },
+            { text: "Your golden heart touches everyone around you with kindness", emoji: "💛", pics: ["B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg", "B6DF0D3E-C488-475C-98DF-4F1D92274056_1_105_c.jpeg", "BAE154D2-97D0-4B47-B710-1BE3B1F9639D_4_5005_c.jpeg", "C057DA8E-BD36-4514-94EA-2797AA92ACD4_4_5005_c.jpeg"] },
+            { text: "You have a melodious voice when you sing", emoji: "🎤", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "C200F0C2-BCB6-47A4-9183-284CED6AE84B_4_5005_c.jpeg", "C31A05E6-06AC-4F48-950A-AB89DF5C8F3A_4_5005_c.jpeg", "C4EEA1C6-DEEC-41F7-A26E-CE1AE931DBF4_4_5005_c.jpeg"] },
+            { text: "You are a connoisseur of dance and truly appreciate the art form", emoji: "🩰", pics: ["C9EBD2A5-F696-47C9-A854-E4284971D8A3_1_105_c.jpeg", "CBD29099-7B80-467C-B831-00D81C20A776_4_5005_c.jpeg", "D20A094B-964E-4543-8C63-1A9C14F30630_4_5005_c.jpeg", "D4ED7A7A-0CDF-4982-96C1-84BA71FD5D6D_4_5005_c.jpeg"] },
+            { text: "You are a spirited and brave young woman who faces challenges head-on", emoji: "💪", pics: ["D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "D853A0A0-3CEA-4000-9C57-A4335A80D9D7_4_5005_c.jpeg", "DD87EE77-4C59-49E9-AB48-EFCEE0F345EA_4_5005_c.jpeg", "DE0B0245-091B-4648-8101-6843D61C32FC_4_5005_c.jpeg"] },
+            { text: "You are a bright and beautiful companion to all who know you", emoji: "🌟", pics: ["DE159079-4A56-41ED-A02B-B7B5F26C3803_4_5005_c.jpeg", "DF9B54C9-C90F-4D6D-A400-3DC9F55B40DF_4_5005_c.jpeg", "E049B3C1-E49B-40EC-A033-B14647115198_1_105_c.jpeg", "E13EDE46-EFC9-4493-93BF-7A38AE6F68A1_1_105_c.jpeg"] },
+            { text: "Your devotion to Radhe Krishna reflects your spiritual depth", emoji: "🙏", pics: ["E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "EA131A7F-C1E3-47FB-B29F-F0066DDA6E9C_4_5005_c.jpeg", "ECB04E1D-627D-4E7E-A79B-FD5402C6D458_4_5005_c.jpeg", "EF1217D4-889E-42CA-87F4-D7958E657171_4_5005_c.jpeg"] },
+            { text: "You're sometimes lovingly stubborn in the most endearing way", emoji: "😄", pics: ["F5E6B14C-1B12-4B4B-9F3B-E297A8F43DCA_4_5005_c.jpeg", "F64A2F23-E7E2-4DA3-BC63-C5431BC3DBC5_1_105_c.jpeg", "F6A9630B-B281-46E8-BE31-78A04316BA7B_4_5005_c.jpeg", "F6EE1EB2-F183-4D8F-AFC1-043094E10B3C_4_5005_c.jpeg"] },
+            { text: "You are gorgeous, gorgeous, gorgeous inside and out", emoji: "👑", pics: ["FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg", "FCD0604E-97AF-4A73-980C-702CF104F81B_1_105_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg"] },
+            { text: "You are an empathetic doctor yet maintain your professionalism", emoji: "❤️", pics: ["05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg", "05F593E5-6FDB-4BA6-8C07-000FCF28AC2F_4_5005_c.jpeg", "096AC416-909F-4FF3-8409-DF1AF642C337_4_5005_c.jpeg", "0982B003-57AA-48D9-9CE6-97E2672ECD37_4_5005_c.jpeg"] },
+            { text: "You love your sleep and we totally respect your need for rest", emoji: "😴", pics: ["152C2FC0-DE3C-47D2-BAA5-8F4F43CEF66B_4_5005_c.jpeg", "1A4DFA98-1EE9-4BF0-9A78-768612FCAA98_4_5005_c.jpeg", "27C45E61-9643-4ADE-B6E1-0F5977A61597_4_5005_c.jpeg", "32E4EA56-AF84-4B25-B3ED-E9381E0102FB_4_5005_c.jpeg"] },
+            { text: "Your love for dosa, idli, and Chinese food shows your amazing taste", emoji: "🍜", pics: ["3FF12A5C-7E50-450E-8713-388CAD796C24_4_5005_c.jpeg", "4B1AC9FA-1620-4BDA-B928-EEC83B76CE1A_4_5005_c.jpeg", "5CFB47C3-2131-470A-96AA-E9C879688162_4_5005_c.jpeg", "60B4555F-089F-4AC3-B4C0-0BC1E713FD12_4_5005_c.jpeg"] },
+            { text: "You are beautiful inside and out in every way possible", emoji: "💖", pics: ["6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg", "7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg"] },
+            { text: "You are charming and attractive in all respects", emoji: "✨", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg"] },
+            { text: "You are understanding and helpful to everyone around you, and you are a blessing to mom and me", emoji: "🙌", pics: ["00725771-AEAD-4449-828D-B52CBD1A4ECA_4_5005_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg", "05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg"] }
         ];
 
-        let currentCard = -1; // -1 for hero, 0-24 for reasons, 25 for final
-        const totalCards = reasons.length + 2; // hero + 25 reasons + final
+        let currentCard = -1;
+        const totalCards = reasons.length + 2;
         const flipCard = document.getElementById('flipCard');
         const flipCardBack = flipCard.querySelector('.flip-card-back');
         const reasonContent = document.getElementById('reasonContent');
@@ -471,29 +479,25 @@
         };
 
         function updatePictures() {
-            // Hide all pictures first
             Object.values(pictureFrames).forEach(pic => {
                 pic.classList.remove('show');
+                pic.innerHTML = '';
             });
 
-            // Show new pictures after a short delay
             setTimeout(() => {
                 if (currentCard === -1) {
-                    // Hero screen - show generic celebration pics
                     const heroEmojis = ['🎉', '🎂', '🎁', '🎈'];
                     pictureFrames.topLeft.textContent = heroEmojis[0];
                     pictureFrames.topRight.textContent = heroEmojis[1];
                     pictureFrames.bottomLeft.textContent = heroEmojis[2];
                     pictureFrames.bottomRight.textContent = heroEmojis[3];
                 } else if (currentCard >= 0 && currentCard < reasons.length) {
-                    // Show reason-specific pictures
                     const pics = reasons[currentCard].pics;
-                    pictureFrames.topLeft.textContent = pics[0];
-                    pictureFrames.topRight.textContent = pics[1];
-                    pictureFrames.bottomLeft.textContent = pics[2];
-                    pictureFrames.bottomRight.textContent = pics[3];
+                    pictureFrames.topLeft.innerHTML = `<img src="${pics[0]}" alt="pic"/>`;
+                    pictureFrames.topRight.innerHTML = `<img src="${pics[1]}" alt="pic"/>`;
+                    pictureFrames.bottomLeft.innerHTML = `<img src="${pics[2]}" alt="pic"/>`;
+                    pictureFrames.bottomRight.innerHTML = `<img src="${pics[3]}" alt="pic"/>`;
                 } else if (currentCard === reasons.length) {
-                    // Final screen - show celebration pics
                     const finalEmojis = ['🎊', '🎉', '💖', '✨'];
                     pictureFrames.topLeft.textContent = finalEmojis[0];
                     pictureFrames.topRight.textContent = finalEmojis[1];
@@ -501,7 +505,6 @@
                     pictureFrames.bottomRight.textContent = finalEmojis[3];
                 }
 
-                // Add show class to display them
                 Object.values(pictureFrames).forEach(pic => {
                     pic.classList.add('show');
                 });
@@ -525,7 +528,6 @@
 
         function updateCard() {
             if (currentCard === reasons.length) {
-                // Show final screen
                 flipCardBack.innerHTML = `
                     <div class="final-content">
                         <h2>You're Not Just a Doctor... 💙</h2>
@@ -546,7 +548,6 @@
                 `;
                 createConfetti();
             } else if (currentCard >= 0 && currentCard < reasons.length) {
-                // Show reason
                 const reason = reasons[currentCard];
                 reasonContent.innerHTML = `
                     <div class="reason-emoji">${reason.emoji}</div>
@@ -554,7 +555,6 @@
                     <div class="reason-text">${reason.text}</div>
                 `;
                 
-                // Trigger confetti on milestone cards
                 if ((currentCard + 1) % 5 === 0) {
                     createConfetti();
                 }
@@ -569,7 +569,6 @@
                 currentCard++;
                 flipCard.classList.remove('flipped');
                 
-                // Small delay to ensure card flips back first
                 setTimeout(() => {
                     updateCard();
                     flipCard.classList.add('flipped');
@@ -577,20 +576,16 @@
             }
         }
 
-        // Click on card to navigate
         flipCard.addEventListener('click', () => {
             if (currentCard === -1) {
-                // First click: flip to show reason 1
                 currentCard++;
                 updateCard();
                 flipCard.classList.add('flipped');
             } else if (currentCard < reasons.length) {
-                // Next clicks: flip back and forth, advance to next reason
                 nextCard();
             }
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') {
                 if (currentCard < reasons.length) {
@@ -620,7 +615,6 @@
             }
         }
 
-        // Initialize - show hero pictures and confetti
         window.addEventListener('load', () => {
             setTimeout(() => {
                 updatePictures();
