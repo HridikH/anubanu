@@ -34,14 +34,15 @@
         /* Picture Frames */
         .picture-frame {
             position: fixed;
-            width: 100px;
-            height: 100px;
+            width: 140px;
+            height: 140px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.5s ease;
+            z-index: 50;
         }
 
         .picture-frame img {
@@ -54,10 +55,10 @@
             opacity: 1;
         }
 
-        .pic-top-left { top: 20px; left: 20px; }
-        .pic-top-right { top: 20px; right: 20px; }
-        .pic-bottom-left { bottom: 20px; left: 20px; }
-        .pic-bottom-right { bottom: 20px; right: 20px; }
+        .pic-top-left { top: 25px; left: 25px; }
+        .pic-top-right { top: 25px; right: 25px; }
+        .pic-bottom-left { bottom: 25px; left: 25px; }
+        .pic-bottom-right { bottom: 25px; right: 25px; }
 
         /* Flip Card */
         .flip-card {
@@ -228,8 +229,8 @@
 
         @media (max-width: 768px) {
             .picture-frame {
-                width: 75px;
-                height: 75px;
+                width: 100px;
+                height: 100px;
             }
             .pic-top-left { top: 10px; left: 10px; }
             .pic-top-right { top: 10px; right: 10px; }
