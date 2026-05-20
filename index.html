@@ -12,17 +12,9 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #FF6B9D;
-            --secondary: #FFC75F;
-            --accent: #845EC2;
-            --dark: #2D1B3D;
-        }
-
         body {
             font-family: 'Quicksand', sans-serif;
             background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 50%, #f0e6ff 100%);
-            color: var(--dark);
             overflow: hidden;
             height: 100vh;
             display: flex;
@@ -30,7 +22,6 @@
             justify-content: center;
         }
 
-        /* Main Container */
         .container {
             position: relative;
             width: 100%;
@@ -41,107 +32,48 @@
         }
 
         /* Picture Frames */
-        .pictures-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
         .picture-frame {
-            position: absolute;
-            width: 120px;
-            height: 120px;
+            position: fixed;
+            width: 100px;
+            height: 100px;
             background: white;
-            border-radius: 15px;
-            padding: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            opacity: 0;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            transform-origin: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
         .picture-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
         }
 
         .picture-frame.show {
             opacity: 1;
         }
 
-        .picture-frame.top-left {
-            top: 30px;
-            left: 30px;
-        }
-
-        .picture-frame.top-right {
-            top: 30px;
-            right: 30px;
-        }
-
-        .picture-frame.bottom-left {
-            bottom: 30px;
-            left: 30px;
-        }
-
-        .picture-frame.bottom-right {
-            bottom: 30px;
-            right: 30px;
-        }
-
-        @media (max-width: 1024px) {
-            .picture-frame {
-                width: 90px;
-                height: 90px;
-                font-size: 2rem;
-            }
-
-            .picture-frame.top-left {
-                top: 15px;
-                left: 15px;
-            }
-
-            .picture-frame.top-right {
-                top: 15px;
-                right: 15px;
-            }
-
-            .picture-frame.bottom-left {
-                bottom: 15px;
-                left: 15px;
-            }
-
-            .picture-frame.bottom-right {
-                bottom: 15px;
-                right: 15px;
-            }
-        }
+        .pic-top-left { top: 20px; left: 20px; }
+        .pic-top-right { top: 20px; right: 20px; }
+        .pic-bottom-left { bottom: 20px; left: 20px; }
+        .pic-bottom-right { bottom: 20px; right: 20px; }
 
         /* Flip Card */
         .flip-card {
-            position: absolute;
-            width: 90vw;
-            max-width: 500px;
-            height: 80vh;
-            max-height: 700px;
+            width: 85vw;
+            max-width: 450px;
+            height: 75vh;
+            max-height: 650px;
             cursor: pointer;
             perspective: 1000px;
-            z-index: 10;
         }
 
         .flip-card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: transform 0.6s;
             transform-style: preserve-3d;
         }
 
@@ -158,198 +90,132 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 30px;
-            padding: 3rem 2rem;
-            box-shadow: 0 30px 80px rgba(255, 107, 157, 0.2), 0 0 1px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 70px rgba(255, 107, 157, 0.2);
             text-align: center;
-        }
-
-        .flip-card-front {
-            background: linear-gradient(135deg, #ffffff 0%, #fff9f5 100%);
-            border: none;
+            background: white;
         }
 
         .flip-card-back {
-            background: linear-gradient(135deg, #ffffff 0%, #fff9f5 100%);
-            border: none;
             transform: rotateY(180deg);
         }
 
-        /* Hero Content */
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #FF6B9D, #845EC2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideUp 0.8s ease-out;
         }
 
-        .hero-content h2 {
+        .hero h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFC75F, #FF6B9D);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideUp 0.8s ease-out 0.2s both;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--dark);
+        .hero p {
+            font-size: 1.1rem;
+            color: #333;
             margin-bottom: 2rem;
-            opacity: 0.8;
-            animation: slideUp 0.8s ease-out 0.4s both;
         }
 
         .tap-hint {
-            font-size: 1rem;
-            opacity: 0.7;
+            font-size: 0.95rem;
+            color: #666;
             font-weight: 500;
-            animation: slideUp 0.8s ease-out 0.6s both;
-        }
-
-        .tap-indicator {
-            display: inline-block;
-            animation: pulse 1.5s ease-in-out infinite;
-            margin-left: 0.5rem;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Reason Card Content */
-        .reason-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
         }
 
         .reason-emoji {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
-            animation: float 3s ease-in-out infinite;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotateZ(0deg); }
-            50% { transform: translateY(-20px) rotateZ(8deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .reason-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            font-size: 3rem;
+            background: linear-gradient(135deg, #FF6B9D, #845EC2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .reason-text {
-            font-size: 1.3rem;
-            color: var(--dark);
-            line-height: 1.8;
-            font-weight: 600;
-            letter-spacing: -0.3px;
+            font-size: 1.25rem;
+            color: #2D1B3D;
+            line-height: 1.7;
+            font-weight: 500;
             max-width: 90%;
         }
 
-        /* End Screen */
-        .final-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        .final-content h2 {
+        .final-h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #FF6B9D, #845EC2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        .final-content p {
-            font-size: 1.1rem;
-            color: var(--dark);
+        .final-p {
+            font-size: 1.05rem;
+            color: #2D1B3D;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
         }
 
-        .heart-wave {
+        .heart {
             display: inline-block;
-            animation: wave 1.5s ease-in-out infinite;
-            margin: 0 0.3rem;
+            animation: wave 1.5s infinite;
+            margin: 0 0.2rem;
         }
 
         @keyframes wave {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
+            50% { transform: scale(1.25); }
         }
 
-        /* Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 15;
-            box-shadow: 0 2px 10px rgba(255, 107, 157, 0.2);
+            height: 5px;
+            background: linear-gradient(90deg, #FF6B9D, #FFC75F, #845EC2);
+            z-index: 100;
         }
 
         .progress-text {
             position: fixed;
-            top: 18px;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.9rem;
-            color: var(--dark);
+            font-size: 0.85rem;
             font-weight: 700;
-            z-index: 15;
             background: white;
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.3px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            color: #2D1B3D;
         }
 
-        /* Confetti */
         @keyframes confetti-fall {
             0% {
-                transform: translateY(-10vh) rotateZ(0deg) scale(1);
+                transform: translateY(-10vh) rotateZ(0deg);
                 opacity: 1;
             }
             100% {
-                transform: translateY(100vh) rotateZ(720deg) scale(0);
+                transform: translateY(100vh) rotateZ(720deg);
                 opacity: 0;
             }
         }
@@ -360,270 +226,165 @@
             animation: confetti-fall linear forwards;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .picture-frame {
+                width: 75px;
+                height: 75px;
             }
+            .pic-top-left { top: 10px; left: 10px; }
+            .pic-top-right { top: 10px; right: 10px; }
+            .pic-bottom-left { bottom: 10px; left: 10px; }
+            .pic-bottom-right { bottom: 10px; right: 10px; }
 
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-
-            .reason-number {
-                font-size: 2.5rem;
-            }
-
-            .reason-text {
-                font-size: 1rem;
-            }
-
-            .reason-emoji {
-                font-size: 3rem;
-            }
-
-            .final-content h2 {
-                font-size: 1.8rem;
-            }
-
-            .final-content p {
-                font-size: 0.95rem;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .reason-number { font-size: 2.2rem; }
+            .reason-text { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
     <div class="progress-text" id="progressText">Click to start!</div>
 
-    <!-- Picture Frames -->
-    <div class="pictures-container">
-        <div class="picture-frame top-left" id="picTopLeft"></div>
-        <div class="picture-frame top-right" id="picTopRight"></div>
-        <div class="picture-frame bottom-left" id="picBottomLeft"></div>
-        <div class="picture-frame bottom-right" id="picBottomRight"></div>
-    </div>
+    <div class="picture-frame pic-top-left" id="pic1"></div>
+    <div class="picture-frame pic-top-right" id="pic2"></div>
+    <div class="picture-frame pic-bottom-left" id="pic3"></div>
+    <div class="picture-frame pic-bottom-right" id="pic4"></div>
 
-    <!-- Main Container -->
     <div class="container">
         <div class="flip-card" id="flipCard">
             <div class="flip-card-inner">
-                <!-- Front: Hero -->
                 <div class="flip-card-front">
-                    <div class="hero-content">
-                        <h1>Happy Birthday <span style="animation: bounce 2s ease-in-out infinite;">🎉</span></h1>
+                    <div class="hero">
+                        <h1>Happy Birthday 🎉</h1>
                         <h2>Anusha</h2>
                         <p>Our amazing doctor & inspiration</p>
-                        <div class="tap-hint">
-                            Click the card to begin
-                            <span class="tap-indicator">👆</span>
-                        </div>
+                        <div class="tap-hint">Click the card to begin 👆</div>
                     </div>
                 </div>
-
-                <!-- Back: First Reason (will be replaced) -->
                 <div class="flip-card-back">
-                    <div class="reason-content" id="reasonContent">
-                        <div class="reason-emoji">✨</div>
-                        <div class="reason-number">01</div>
-                        <div class="reason-text">You are the most wonderful, beautiful, thoughtful and fun human being</div>
-                    </div>
+                    <div id="backContent"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // 25 Reasons with image paths
         const reasons = [
-            { text: "You are the most wonderful, beautiful, thoughtful and fun human being", emoji: "✨", pics: ["1A8B3D8F-35BC-40C7-9CC7-97E92749ACA4_1_105_c.jpeg", "1BCC4F53-AF27-4C58-8099-4C087CE99C79_1_105_c.jpeg", "24BC25F2-64E4-4033-8BC4-0A4D87525210_4_5005_c.jpeg", "27021148-1699-4096-AF87-4A12A8BD88B2_4_5005_c.jpeg"] },
-            { text: "You have a golden heart that shines through everything you do", emoji: "💛", pics: ["2A836889-E952-4F7F-871C-B17C0312B41A_1_105_c.jpeg", "2CCF68D1-91E6-42B9-AE10-35C645ED0732_1_105_c.jpeg", "2ECF2899-F82E-4B8B-BB6A-25D98246CE97_4_5005_c.jpeg", "31F43B2F-4CB2-4B13-8FC9-2987FBCF9BD5_4_5005_c.jpeg"] },
-            { text: "You are intelligent and smart in ways that inspire us all", emoji: "🧠", pics: ["33B76539-CE1A-43D6-9072-614F1BCBF43F_4_5005_c.jpeg", "352C8C61-1432-4CA7-A7F2-A7F1F73E948C_4_5005_c.jpeg", "355F6FEA-CE3E-4755-B0ED-52A1A8DE6D12_4_5005_c.jpeg", "3B06EB91-B8E3-48B0-A9B4-349AF885A175_4_5005_c.jpeg"] },
-            { text: "Your magnetic smile and drop-dead good looks light up every room", emoji: "😊", pics: ["40C9F285-13A0-4F89-9FA4-BED3AE1FB201.jpeg", "432CD8F8-F431-4644-9044-375635138CB2_4_5005_c.jpeg", "43E7F1C0-AD7C-489E-9CED-ACCEB3C84C7C_1_105_c.jpeg", "46FC74C4-1519-4EAE-B876-9044274EBA3D_4_5005_c.jpeg"] },
-            { text: "You have a rocking personality that draws everyone in", emoji: "🎸", pics: ["52150B1A-7A42-4AF1-B1B3-7B1682FF21A9_1_105_c.jpeg", "522E7F63-850C-4F58-B588-4DE014043DDB_4_5005_c.jpeg", "5318129F-4A52-4516-8FE1-2D7768D9E289_1_105_c.jpeg", "55DDFD98-B613-4BED-92F5-BE822DC9BF93_4_5005_c.jpeg"] },
-            { text: "You are a brilliant doctor who truly cares about your patients", emoji: "👩‍⚕️", pics: ["614134A6-73BD-40A7-9113-A5FDAF728593_4_5005_c.jpeg", "61508C7A-D485-4CFA-A16D-B30C07448461_4_5005_c.jpeg", "6BEC6ED6-312B-485A-B118-7DCDF500B280_4_5005_c.jpeg", "6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg"] },
-            { text: "You are an amazing daughter who makes mom so proud", emoji: "👧", pics: ["71C006DC-C926-4461-9646-9786141E6DF1_4_5005_c.jpeg", "74276404-C06C-4946-A521-BA2810FFE780_4_5005_c.jpeg", "7721E552-B913-4F28-B82E-05ED1EA699D8_4_5005_c.jpeg", "7C479F1C-E6AB-409F-B3ED-0077A691B4C7_4_5005_c.jpeg"] },
-            { text: "You are an amazing sister and I'm lucky to have you as my sibling", emoji: "👭", pics: ["7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "7F2080E9-4117-4D79-9D95-C8D353CD4DC3_4_5005_c.jpeg", "7F2EE0FE-BAEF-4932-B1ED-B5E1AE81D855_4_5005_c.jpeg", "8329C031-9E04-45A0-99D3-F35809C3A517_4_5005_c.jpeg"] },
-            { text: "Your lovely doe-like eyes and you're the apple of mom's eye (and mine too!)", emoji: "👁️", pics: ["91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "936EB3C1-8518-471C-AAB4-E078235F5EA9_4_5005_c.jpeg", "964E56A3-1E7C-4E2E-B277-4861AD84F6C1_4_5005_c.jpeg", "993F673A-C681-4B60-946B-538FE7CCA9CA_4_5005_c.jpeg"] },
-            { text: "You are a dear and loyal friend who always shows up when it matters", emoji: "🤝", pics: ["9FE0200E-8BFE-4569-A9A2-B9F28B9CB7C2_4_5005_c.jpeg", "A45F8A64-2A16-4D3A-B11D-39E455E5CD35_4_5005_c.jpeg", "A684CC2F-BC47-42CE-84C0-B88C8D4D2F40_4_5005_c.jpeg", "A8A2B7D1-EDFD-47B8-9D91-C74741D75905_1_105_c.jpeg"] },
-            { text: "You are a graceful dancer who moves with such elegance", emoji: "💃", pics: ["B32096E6-D82E-45B1-99B5-BC43E8F58996_4_5005_c.jpeg", "B34D267B-3ABA-49BE-8D45-87CABE0971C5.jpeg", "B3977E84-D173-4E61-8388-2498CB5E367C_4_5005_c.jpeg", "B442B845-E1D1-4C8F-AFAB-6C6F2F4B4393_4_5005_c.jpeg"] },
-            { text: "Your golden heart touches everyone around you with kindness", emoji: "💛", pics: ["B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg", "B6DF0D3E-C488-475C-98DF-4F1D92274056_1_105_c.jpeg", "BAE154D2-97D0-4B47-B710-1BE3B1F9639D_4_5005_c.jpeg", "C057DA8E-BD36-4514-94EA-2797AA92ACD4_4_5005_c.jpeg"] },
-            { text: "You have a melodious voice when you sing", emoji: "🎤", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "C200F0C2-BCB6-47A4-9183-284CED6AE84B_4_5005_c.jpeg", "C31A05E6-06AC-4F48-950A-AB89DF5C8F3A_4_5005_c.jpeg", "C4EEA1C6-DEEC-41F7-A26E-CE1AE931DBF4_4_5005_c.jpeg"] },
-            { text: "You are a connoisseur of dance and truly appreciate the art form", emoji: "🩰", pics: ["C9EBD2A5-F696-47C9-A854-E4284971D8A3_1_105_c.jpeg", "CBD29099-7B80-467C-B831-00D81C20A776_4_5005_c.jpeg", "D20A094B-964E-4543-8C63-1A9C14F30630_4_5005_c.jpeg", "D4ED7A7A-0CDF-4982-96C1-84BA71FD5D6D_4_5005_c.jpeg"] },
-            { text: "You are a spirited and brave young woman who faces challenges head-on", emoji: "💪", pics: ["D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "D853A0A0-3CEA-4000-9C57-A4335A80D9D7_4_5005_c.jpeg", "DD87EE77-4C59-49E9-AB48-EFCEE0F345EA_4_5005_c.jpeg", "DE0B0245-091B-4648-8101-6843D61C32FC_4_5005_c.jpeg"] },
-            { text: "You are a bright and beautiful companion to all who know you", emoji: "🌟", pics: ["DE159079-4A56-41ED-A02B-B7B5F26C3803_4_5005_c.jpeg", "DF9B54C9-C90F-4D6D-A400-3DC9F55B40DF_4_5005_c.jpeg", "E049B3C1-E49B-40EC-A033-B14647115198_1_105_c.jpeg", "E13EDE46-EFC9-4493-93BF-7A38AE6F68A1_1_105_c.jpeg"] },
-            { text: "Your devotion to Radhe Krishna reflects your spiritual depth", emoji: "🙏", pics: ["E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "EA131A7F-C1E3-47FB-B29F-F0066DDA6E9C_4_5005_c.jpeg", "ECB04E1D-627D-4E7E-A79B-FD5402C6D458_4_5005_c.jpeg", "EF1217D4-889E-42CA-87F4-D7958E657171_4_5005_c.jpeg"] },
-            { text: "You're sometimes lovingly stubborn in the most endearing way", emoji: "😄", pics: ["F5E6B14C-1B12-4B4B-9F3B-E297A8F43DCA_4_5005_c.jpeg", "F64A2F23-E7E2-4DA3-BC63-C5431BC3DBC5_1_105_c.jpeg", "F6A9630B-B281-46E8-BE31-78A04316BA7B_4_5005_c.jpeg", "F6EE1EB2-F183-4D8F-AFC1-043094E10B3C_4_5005_c.jpeg"] },
-            { text: "You are gorgeous, gorgeous, gorgeous inside and out", emoji: "👑", pics: ["FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg", "FCD0604E-97AF-4A73-980C-702CF104F81B_1_105_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg"] },
-            { text: "You are an empathetic doctor yet maintain your professionalism", emoji: "❤️", pics: ["05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg", "05F593E5-6FDB-4BA6-8C07-000FCF28AC2F_4_5005_c.jpeg", "096AC416-909F-4FF3-8409-DF1AF642C337_4_5005_c.jpeg", "0982B003-57AA-48D9-9CE6-97E2672ECD37_4_5005_c.jpeg"] },
-            { text: "You love your sleep and we totally respect your need for rest", emoji: "😴", pics: ["152C2FC0-DE3C-47D2-BAA5-8F4F43CEF66B_4_5005_c.jpeg", "1A4DFA98-1EE9-4BF0-9A78-768612FCAA98_4_5005_c.jpeg", "27C45E61-9643-4ADE-B6E1-0F5977A61597_4_5005_c.jpeg", "32E4EA56-AF84-4B25-B3ED-E9381E0102FB_4_5005_c.jpeg"] },
-            { text: "Your love for dosa, idli, and Chinese food shows your amazing taste", emoji: "🍜", pics: ["3FF12A5C-7E50-450E-8713-388CAD796C24_4_5005_c.jpeg", "4B1AC9FA-1620-4BDA-B928-EEC83B76CE1A_4_5005_c.jpeg", "5CFB47C3-2131-470A-96AA-E9C879688162_4_5005_c.jpeg", "60B4555F-089F-4AC3-B4C0-0BC1E713FD12_4_5005_c.jpeg"] },
-            { text: "You are beautiful inside and out in every way possible", emoji: "💖", pics: ["6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg", "7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg"] },
-            { text: "You are charming and attractive in all respects", emoji: "✨", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg"] },
-            { text: "You are understanding and helpful to everyone around you, and you are a blessing to mom and me", emoji: "🙌", pics: ["00725771-AEAD-4449-828D-B52CBD1A4ECA_4_5005_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg", "05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg"] }
+            { text: "You are the most wonderful, beautiful, thoughtful and fun human being", pics: ["1A8B3D8F-35BC-40C7-9CC7-97E92749ACA4_1_105_c.jpeg", "1BCC4F53-AF27-4C58-8099-4C087CE99C79_1_105_c.jpeg", "24BC25F2-64E4-4033-8BC4-0A4D87525210_4_5005_c.jpeg", "27021148-1699-4096-AF87-4A12A8BD88B2_4_5005_c.jpeg"] },
+            { text: "You have a golden heart that shines through everything you do", pics: ["2A836889-E952-4F7F-871C-B17C0312B41A_1_105_c.jpeg", "2CCF68D1-91E6-42B9-AE10-35C645ED0732_1_105_c.jpeg", "2ECF2899-F82E-4B8B-BB6A-25D98246CE97_4_5005_c.jpeg", "31F43B2F-4CB2-4B13-8FC9-2987FBCF9BD5_4_5005_c.jpeg"] },
+            { text: "You are intelligent and smart in ways that inspire us all", pics: ["33B76539-CE1A-43D6-9072-614F1BCBF43F_4_5005_c.jpeg", "352C8C61-1432-4CA7-A7F2-A7F1F73E948C_4_5005_c.jpeg", "355F6FEA-CE3E-4755-B0ED-52A1A8DE6D12_4_5005_c.jpeg", "3B06EB91-B8E3-48B0-A9B4-349AF885A175_4_5005_c.jpeg"] },
+            { text: "Your magnetic smile and drop-dead good looks light up every room", pics: ["40C9F285-13A0-4F89-9FA4-BED3AE1FB201.jpeg", "432CD8F8-F431-4644-9044-375635138CB2_4_5005_c.jpeg", "43E7F1C0-AD7C-489E-9CED-ACCEB3C84C7C_1_105_c.jpeg", "46FC74C4-1519-4EAE-B876-9044274EBA3D_4_5005_c.jpeg"] },
+            { text: "You have a rocking personality that draws everyone in", pics: ["52150B1A-7A42-4AF1-B1B3-7B1682FF21A9_1_105_c.jpeg", "522E7F63-850C-4F58-B588-4DE014043DDB_4_5005_c.jpeg", "5318129F-4A52-4516-8FE1-2D7768D9E289_1_105_c.jpeg", "55DDFD98-B613-4BED-92F5-BE822DC9BF93_4_5005_c.jpeg"] },
+            { text: "You are a brilliant doctor who truly cares about your patients", pics: ["614134A6-73BD-40A7-9113-A5FDAF728593_4_5005_c.jpeg", "61508C7A-D485-4CFA-A16D-B30C07448461_4_5005_c.jpeg", "6BEC6ED6-312B-485A-B118-7DCDF500B280_4_5005_c.jpeg", "6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg"] },
+            { text: "You are an amazing daughter who makes mom so proud", pics: ["71C006DC-C926-4461-9646-9786141E6DF1_4_5005_c.jpeg", "74276404-C06C-4946-A521-BA2810FFE780_4_5005_c.jpeg", "7721E552-B913-4F28-B82E-05ED1EA699D8_4_5005_c.jpeg", "7C479F1C-E6AB-409F-B3ED-0077A691B4C7_4_5005_c.jpeg"] },
+            { text: "You are an amazing sister and I'm lucky to have you as my sibling", pics: ["7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "7F2080E9-4117-4D79-9D95-C8D353CD4DC3_4_5005_c.jpeg", "7F2EE0FE-BAEF-4932-B1ED-B5E1AE81D855_4_5005_c.jpeg", "8329C031-9E04-45A0-99D3-F35809C3A517_4_5005_c.jpeg"] },
+            { text: "Your lovely doe-like eyes and you're the apple of mom's eye (and mine too!)", pics: ["91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "936EB3C1-8518-471C-AAB4-E078235F5EA9_4_5005_c.jpeg", "964E56A3-1E7C-4E2E-B277-4861AD84F6C1_4_5005_c.jpeg", "993F673A-C681-4B60-946B-538FE7CCA9CA_4_5005_c.jpeg"] },
+            { text: "You are a dear and loyal friend who always shows up when it matters", pics: ["9FE0200E-8BFE-4569-A9A2-B9F28B9CB7C2_4_5005_c.jpeg", "A45F8A64-2A16-4D3A-B11D-39E455E5CD35_4_5005_c.jpeg", "A684CC2F-BC47-42CE-84C0-B88C8D4D2F40_4_5005_c.jpeg", "A8A2B7D1-EDFD-47B8-9D91-C74741D75905_1_105_c.jpeg"] },
+            { text: "You are a graceful dancer who moves with such elegance", pics: ["B32096E6-D82E-45B1-99B5-BC43E8F58996_4_5005_c.jpeg", "B34D267B-3ABA-49BE-8D45-87CABE0971C5.jpeg", "B3977E84-D173-4E61-8388-2498CB5E367C_4_5005_c.jpeg", "B442B845-E1D1-4C8F-AFAB-6C6F2F4B4393_4_5005_c.jpeg"] },
+            { text: "Your golden heart touches everyone around you with kindness", pics: ["B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg", "B6DF0D3E-C488-475C-98DF-4F1D92274056_1_105_c.jpeg", "BAE154D2-97D0-4B47-B710-1BE3B1F9639D_4_5005_c.jpeg", "C057DA8E-BD36-4514-94EA-2797AA92ACD4_4_5005_c.jpeg"] },
+            { text: "You have a melodious voice when you sing", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "C200F0C2-BCB6-47A4-9183-284CED6AE84B_4_5005_c.jpeg", "C31A05E6-06AC-4F48-950A-AB89DF5C8F3A_4_5005_c.jpeg", "C4EEA1C6-DEEC-41F7-A26E-CE1AE931DBF4_4_5005_c.jpeg"] },
+            { text: "You are a connoisseur of dance and truly appreciate the art form", pics: ["C9EBD2A5-F696-47C9-A854-E4284971D8A3_1_105_c.jpeg", "CBD29099-7B80-467C-B831-00D81C20A776_4_5005_c.jpeg", "D20A094B-964E-4543-8C63-1A9C14F30630_4_5005_c.jpeg", "D4ED7A7A-0CDF-4982-96C1-84BA71FD5D6D_4_5005_c.jpeg"] },
+            { text: "You are a spirited and brave young woman who faces challenges head-on", pics: ["D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "D853A0A0-3CEA-4000-9C57-A4335A80D9D7_4_5005_c.jpeg", "DD87EE77-4C59-49E9-AB48-EFCEE0F345EA_4_5005_c.jpeg", "DE0B0245-091B-4648-8101-6843D61C32FC_4_5005_c.jpeg"] },
+            { text: "You are a bright and beautiful companion to all who know you", pics: ["DE159079-4A56-41ED-A02B-B7B5F26C3803_4_5005_c.jpeg", "DF9B54C9-C90F-4D6D-A400-3DC9F55B40DF_4_5005_c.jpeg", "E049B3C1-E49B-40EC-A033-B14647115198_1_105_c.jpeg", "E13EDE46-EFC9-4493-93BF-7A38AE6F68A1_1_105_c.jpeg"] },
+            { text: "Your devotion to Radhe Krishna reflects your spiritual depth", pics: ["E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "EA131A7F-C1E3-47FB-B29F-F0066DDA6E9C_4_5005_c.jpeg", "ECB04E1D-627D-4E7E-A79B-FD5402C6D458_4_5005_c.jpeg", "EF1217D4-889E-42CA-87F4-D7958E657171_4_5005_c.jpeg"] },
+            { text: "You're sometimes lovingly stubborn in the most endearing way", pics: ["F5E6B14C-1B12-4B4B-9F3B-E297A8F43DCA_4_5005_c.jpeg", "F64A2F23-E7E2-4DA3-BC63-C5431BC3DBC5_1_105_c.jpeg", "F6A9630B-B281-46E8-BE31-78A04316BA7B_4_5005_c.jpeg", "F6EE1EB2-F183-4D8F-AFC1-043094E10B3C_4_5005_c.jpeg"] },
+            { text: "You are gorgeous, gorgeous, gorgeous inside and out", pics: ["FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg", "FCD0604E-97AF-4A73-980C-702CF104F81B_1_105_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg"] },
+            { text: "You are an empathetic doctor yet maintain your professionalism", pics: ["05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg", "05F593E5-6FDB-4BA6-8C07-000FCF28AC2F_4_5005_c.jpeg", "096AC416-909F-4FF3-8409-DF1AF642C337_4_5005_c.jpeg", "0982B003-57AA-48D9-9CE6-97E2672ECD37_4_5005_c.jpeg"] },
+            { text: "You love your sleep and we totally respect your need for rest", pics: ["152C2FC0-DE3C-47D2-BAA5-8F4F43CEF66B_4_5005_c.jpeg", "1A4DFA98-1EE9-4BF0-9A78-768612FCAA98_4_5005_c.jpeg", "27C45E61-9643-4ADE-B6E1-0F5977A61597_4_5005_c.jpeg", "32E4EA56-AF84-4B25-B3ED-E9381E0102FB_4_5005_c.jpeg"] },
+            { text: "Your love for dosa, idli, and Chinese food shows your amazing taste", pics: ["3FF12A5C-7E50-450E-8713-388CAD796C24_4_5005_c.jpeg", "4B1AC9FA-1620-4BDA-B928-EEC83B76CE1A_4_5005_c.jpeg", "5CFB47C3-2131-470A-96AA-E9C879688162_4_5005_c.jpeg", "60B4555F-089F-4AC3-B4C0-0BC1E713FD12_4_5005_c.jpeg"] },
+            { text: "You are beautiful inside and out in every way possible", pics: ["6FEC1C50-CDD7-48E9-8FBA-38F34E633382_4_5005_c.jpeg", "7CDBCC46-02E4-49C9-955C-A4AC54C45DC7_4_5005_c.jpeg", "91D882FA-A454-4964-88CB-B4093C287909_4_5005_c.jpeg", "B68F4B32-6AC2-475F-BC09-9D65B62565C7_4_5005_c.jpeg"] },
+            { text: "You are charming and attractive in all respects", pics: ["C16167E3-4E48-42BD-BBE0-0DB6191F5151_4_5005_c.jpeg", "D62030D3-4A2C-44A4-95AF-882EE9FE8CC2_4_5005_c.jpeg", "E91BD9FA-2F9E-43AD-A60F-50A182FB1DAE_4_5005_c.jpeg", "FB3937CE-CD78-4C66-9549-6F7AB0B1CF89_4_5005_c.jpeg"] },
+            { text: "You are understanding and helpful to everyone around you, and you are a blessing to mom and me", pics: ["00725771-AEAD-4449-828D-B52CBD1A4ECA_4_5005_c.jpeg", "0435A2D1-6912-4597-8081-D0C5141B304C_4_5005_c.jpeg", "055317FF-4954-4B4C-AA95-0AC89CBFD0F7_1_105_c.jpeg", "05A86779-7DEB-437A-ABAA-5750BE7059B9_4_5005_c.jpeg"] }
         ];
 
         let currentCard = -1;
-        const totalCards = reasons.length + 2;
         const flipCard = document.getElementById('flipCard');
-        const flipCardBack = flipCard.querySelector('.flip-card-back');
-        const reasonContent = document.getElementById('reasonContent');
+        const backContent = document.getElementById('backContent');
+        const pics = [document.getElementById('pic1'), document.getElementById('pic2'), document.getElementById('pic3'), document.getElementById('pic4')];
 
-        const pictureFrames = {
-            topLeft: document.getElementById('picTopLeft'),
-            topRight: document.getElementById('picTopRight'),
-            bottomLeft: document.getElementById('picBottomLeft'),
-            bottomRight: document.getElementById('picBottomRight')
-        };
-
-        function updatePictures() {
-            Object.values(pictureFrames).forEach(pic => {
-                pic.classList.remove('show');
-                pic.innerHTML = '';
-            });
-
+        function showPics(picArray) {
+            pics.forEach((pic, i) => pic.classList.remove('show'));
             setTimeout(() => {
-                if (currentCard === -1) {
-                    const heroEmojis = ['🎉', '🎂', '🎁', '🎈'];
-                    pictureFrames.topLeft.textContent = heroEmojis[0];
-                    pictureFrames.topRight.textContent = heroEmojis[1];
-                    pictureFrames.bottomLeft.textContent = heroEmojis[2];
-                    pictureFrames.bottomRight.textContent = heroEmojis[3];
-                } else if (currentCard >= 0 && currentCard < reasons.length) {
-                    const pics = reasons[currentCard].pics;
-                    pictureFrames.topLeft.innerHTML = `<img src="${pics[0]}" alt="pic"/>`;
-                    pictureFrames.topRight.innerHTML = `<img src="${pics[1]}" alt="pic"/>`;
-                    pictureFrames.bottomLeft.innerHTML = `<img src="${pics[2]}" alt="pic"/>`;
-                    pictureFrames.bottomRight.innerHTML = `<img src="${pics[3]}" alt="pic"/>`;
-                } else if (currentCard === reasons.length) {
-                    const finalEmojis = ['🎊', '🎉', '💖', '✨'];
-                    pictureFrames.topLeft.textContent = finalEmojis[0];
-                    pictureFrames.topRight.textContent = finalEmojis[1];
-                    pictureFrames.bottomLeft.textContent = finalEmojis[2];
-                    pictureFrames.bottomRight.textContent = finalEmojis[3];
-                }
-
-                Object.values(pictureFrames).forEach(pic => {
-                    pic.classList.add('show');
+                picArray.forEach((src, i) => {
+                    pics[i].innerHTML = `<img src="${src}" alt="pic"/>`;
+                    pics[i].classList.add('show');
                 });
-            }, 100);
+            }, 50);
         }
 
         function updateProgress() {
-            const percent = ((currentCard + 1) / totalCards) * 100;
+            const percent = ((currentCard + 1) / 27) * 100;
             document.getElementById('progressBar').style.width = percent + '%';
-            
-            let text = '';
             if (currentCard === -1) {
-                text = 'Click to start!';
-            } else if (currentCard >= 0 && currentCard < reasons.length) {
-                text = `Reason ${currentCard + 1} of 25`;
+                document.getElementById('progressText').textContent = 'Click to start!';
+            } else if (currentCard < 25) {
+                document.getElementById('progressText').textContent = `Reason ${currentCard + 1} of 25`;
             } else {
-                text = 'The End! 💖';
+                document.getElementById('progressText').textContent = 'The End! 💖';
             }
-            document.getElementById('progressText').textContent = text;
         }
 
-        function updateCard() {
-            if (currentCard === reasons.length) {
-                flipCardBack.innerHTML = `
-                    <div class="final-content">
-                        <h2>You're Not Just a Doctor... 💙</h2>
-                        <p>
-                            You're a role model, a friend, a light in the darkness, and the person we admire most.
-                            <br><br>
-                            <span class="heart-wave">💖</span>
-                            <span class="heart-wave">💖</span>
-                            <span class="heart-wave">💖</span>
-                            <br><br>
-                            Thank you for being YOU. Happy Birthday, Anusha!
-                            <br><br>
-                            With all our love,
-                            <br>
-                            Mom and Bhaodude
-                        </p>
-                    </div>
-                `;
-                createConfetti();
-            } else if (currentCard >= 0 && currentCard < reasons.length) {
-                const reason = reasons[currentCard];
-                reasonContent.innerHTML = `
-                    <div class="reason-emoji">${reason.emoji}</div>
-                    <div class="reason-number">${String(currentCard + 1).padStart(2, '0')}</div>
+        function showReason(index) {
+            if (index < 25) {
+                const reason = reasons[index];
+                backContent.innerHTML = `
+                    <div class="reason-emoji">✨</div>
+                    <div class="reason-number">${String(index + 1).padStart(2, '0')}</div>
                     <div class="reason-text">${reason.text}</div>
                 `;
-                
-                if ((currentCard + 1) % 5 === 0) {
-                    createConfetti();
-                }
+                showPics(reason.pics);
+            } else {
+                backContent.innerHTML = `
+                    <div class="final-h2">You're Not Just a Doctor... 💙</div>
+                    <div class="final-p">
+                        You're a role model, a friend, a light in the darkness, and the person we admire most.
+                        <br><br>
+                        <span class="heart">💖</span>
+                        <span class="heart">💖</span>
+                        <span class="heart">💖</span>
+                        <br><br>
+                        Thank you for being YOU. Happy Birthday, Anusha!
+                        <br><br>
+                        With all our love,<br>
+                        Mom and Bhaodude
+                    </div>
+                `;
+                showConfetti();
+                showPics(['🎊', '🎉', '💖', '✨']);
             }
-
-            updatePictures();
             updateProgress();
         }
 
-        function nextCard() {
-            if (currentCard < reasons.length) {
-                currentCard++;
-                flipCard.classList.remove('flipped');
-                
-                setTimeout(() => {
-                    updateCard();
-                    flipCard.classList.add('flipped');
-                }, 50);
-            }
-        }
-
         flipCard.addEventListener('click', () => {
-            if (currentCard === -1) {
+            if (currentCard < 25) {
                 currentCard++;
-                updateCard();
                 flipCard.classList.add('flipped');
-            } else if (currentCard < reasons.length) {
-                nextCard();
+                showReason(currentCard);
+                if ((currentCard + 1) % 5 === 0) showConfetti();
             }
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                if (currentCard < reasons.length) {
-                    nextCard();
-                }
-            }
-        });
-
-        function createConfetti() {
-            const colors = ['#FF6B9D', '#FFC75F', '#845EC2', '#00C9A7', '#F7F0FF'];
-            const confettiCount = 40;
-
-            for (let i = 0; i < confettiCount; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * window.innerWidth + 'px';
-                confetti.style.top = '50%';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.width = Math.random() * 10 + 5 + 'px';
-                confetti.style.height = confetti.style.width;
-                confetti.style.borderRadius = '50%';
-                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                confetti.style.animationDelay = Math.random() * 0.3 + 's';
-                document.body.appendChild(confetti);
-
-                setTimeout(() => confetti.remove(), 5000);
+        function showConfetti() {
+            const colors = ['#FF6B9D', '#FFC75F', '#845EC2', '#00C9A7'];
+            for (let i = 0; i < 30; i++) {
+                const conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = Math.random() * 100 + '%';
+                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.width = (Math.random() * 8 + 4) + 'px';
+                conf.style.height = conf.style.width;
+                conf.style.borderRadius = '50%';
+                conf.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                conf.style.animationDelay = Math.random() * 0.2 + 's';
+                document.body.appendChild(conf);
+                setTimeout(() => conf.remove(), 4000);
             }
         }
-
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                updatePictures();
-                createConfetti();
-            }, 300);
-        });
 
         updateProgress();
+        showPics(['🎉', '🎂', '🎁', '🎈']);
     </script>
-
 </body>
 </html>
